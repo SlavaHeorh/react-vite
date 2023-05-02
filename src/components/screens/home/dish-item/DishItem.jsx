@@ -1,4 +1,5 @@
 function DishItem({dish}) {
+
     return (
         <div key={dish.id} className='catalog__card'>
             <div className='catalog__dish-photo'
