@@ -14,10 +14,8 @@ function Home() {
 
     // use hook useEffect
     // useEffect(() => {
-    //     const fetchData = await => {
-    //     const response = await fetch('server name')-> get date from server
-    //     const dats = await response.json() -> in json format
-    //
+    //     const fetchData = await =>
+    //     const data = await CarService.getAll()
     //     setDishes(data)
     //     }
     //

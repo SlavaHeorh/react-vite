@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 function DishItem({dish}) {
 
     return (
@@ -14,7 +16,7 @@ function DishItem({dish}) {
                         currency: 'USD'
                     }).format(dish.price)}
                 </p>
-                <button className='button-global'>More about dish</button>
+                <Link className='button-global' to={`/dish/${dish.id}`}>More about dish</Link>
             </div>
         </div>
     )
