@@ -1,4 +1,5 @@
 import {Link} from "react-router-dom";
+import Price from "./Price.jsx";
 
 function DishItem({dish}) {
 
@@ -10,12 +11,7 @@ function DishItem({dish}) {
                  }}/>
             <div className='catalog__wrapper-text'>
                 <h2 className='catalog__card-header'>{dish.name}</h2>
-                <p className='catalog__card-text'>
-                    {new Intl.NumberFormat('ru-RU', {
-                        style: 'currency',
-                        currency: 'USD'
-                    }).format(dish.price)}
-                </p>
+                <Price price={dish.price}/>
                 <Link className='button-global' to={`/dish/${dish.id}`}>More about dish</Link>
             </div>
         </div>

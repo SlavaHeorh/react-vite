@@ -1,49 +1,40 @@
 import './createDishForm.scss'
 import {useState} from "react";
+import {useForm} from "react-hook-form";
+import ErrorMessage from "./ErrorMessage.jsx";
+import {useCreateDish} from "./useCreateDish.js";
 
-const clearData = {
-    price: '',
-    name: '',
-    image: ''
-}
 
 function CreateDishForm({setDishes}) {
-    const [data, setData] = useState(clearData)
 
-    const addDish = (e) => {
-        e.preventDefault()
-        setDishes(prev => [{
-            id: prev.length + 1, ...data}, ...prev
-        ])
+    const {register, reset, handleSubmit, formState: {errors}} = useForm({
+        mode: 'onChange'
+    })
 
-        setData(clearData)
-    }
+    const {addDish} = useCreateDish(reset, setDishes)
+
 
     return (
-        <form className='form-creator'>
+        <form className='form-creator' onSubmit={handleSubmit(addDish)}>
             <input
+                {...register('name', {required: 'Name is required'})}
                 placeholder='name'
-                onChange={e => setData(prev => ({
-                    ...prev, name: e.target.value
-                }))}
-                value={data.name}
             />
-            <input
-                placeholder='price'
-                onChange={e => setData(prev => ({
-                    ...prev, price: e.target.value
-                }))}
-                value={data.price}
-            />
-            <input
-                placeholder='image'
-                onChange={e => setData(prev => ({
-                    ...prev, image: e.target.value
-                }))}
-                value={data.image}
-            />
+            <ErrorMessage error={errors?.name?.message}/>
 
-            <button onClick={e =>addDish(e)} className='button-global'>Add dish</button>
+            <input
+                {...register('price', {required: 'Price is required'})}
+                placeholder='price'
+            />
+            <ErrorMessage error={errors?.price?.message}/>
+
+            <input
+                {...register('image', {required: 'Image is required'})}
+                placeholder='image'
+            />
+            <ErrorMessage error={errors?.image?.message}/>
+
+            <button className='button-global'>Add dish</button>
         </form>
     )
 }
