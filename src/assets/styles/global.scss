@@ -17,11 +17,11 @@ body {
 }
 
 .button-global {
-  margin-top: 20px;
+  display: block;
   cursor: pointer;
   background-color: burlywood;
-  padding: 6px 18px;
-  border: burlywood 1px solid;
+  padding: 8px 20px;
+  border: none;
   border-radius: 6px;
   font-size: 16px;
   font-weight: 600;

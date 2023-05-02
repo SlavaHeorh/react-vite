@@ -1,0 +1,18 @@
+.form-creator {
+  padding: 20px 0;
+
+  input {
+    max-width: 50%;
+    width: 100%;
+    padding: 5px 10px;
+    outline: none;
+    transition: border-color .5s ease;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    margin-bottom: 20px;
+
+    &:focus {
+      border-color: burlywood;
+    }
+  }
+}
