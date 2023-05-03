@@ -1,5 +1,5 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import Home from "./screens/home/Home.jsx";
+import Home from "./screens/home/Home.tsx";
 import DishDetail from "./screens/dish-detail/DishDetail";
 
 const RouterComponent = () => {

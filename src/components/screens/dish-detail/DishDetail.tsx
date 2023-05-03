@@ -1,7 +1,7 @@
 import {Link, useLocation} from "react-router-dom";
 import {useState} from "react";
 import {dishes as dishesData} from "../home/dishes.data.js";
-import DishItem from "../home/dish-item/DishItem.jsx";
+import DishItem from "../home/dish-item/DishItem.js";
 
 const DishDetail = () => {
 

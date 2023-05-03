@@ -1,7 +1,7 @@
 import './createDishForm.scss'
 import {useState} from "react";
 import {useForm} from "react-hook-form";
-import ErrorMessage from "./ErrorMessage.jsx";
+import ErrorMessage from "./ErrorMessage.js";
 import {useCreateDish} from "./useCreateDish.js";
 
 
