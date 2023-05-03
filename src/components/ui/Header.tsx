@@ -2,7 +2,7 @@ import {useAuth} from "../../hooks/useAuth.js";
 
 const Header = () => {
 
-    const {user, setUser} = useAuth
+    const {user, setUser} = useAuth()
 
     return (
         user ?
