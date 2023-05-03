@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom";
-import Price from "./Price.jsx";
+import Price from "./Price.js";
 
 function DishItem({dish}) {
 
